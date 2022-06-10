@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/index-style.css">
+    <link rel="stylesheet" href="../assets/nav-footer-style.css">
+    <link rel="stylesheet" href="../assets/index-style.css" src="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+  </head>
+    <body>
+    <%-include('../static/nav.ejs')%>
+      <main>
+        <div class="img">
+            <img src=" mainlogo.png "  alt="not available"/>
+          </div>
+         <div class="log-sign-div">
+             <button id="login-btn" ><a class="log-sign-class" href="login" >login</a></button>
+             <button id="signup-btn"><a class="log-sign-class" href="signup" >signup</a></button>
+        </div>
+      </main>
+      <%-include('../static/footer.ejs')%>
+</body>
+</html>

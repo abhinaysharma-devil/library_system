@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/login-style.css">
+    <link rel="stylesheet" href="../assets/nav-footer-style.css">
+</head>
+<body>
+    <%-include('../static/nav.ejs')%>
+<div class="login-div">
+    <h1>Login</h1>
+    <form action="">
+        <input type="email" name="email" id="log-email" placeholder="email" class="login-inp">
+        <input type="password" name="pass" id="pass-id" placeholder="password" class="login-inp">
+        <button class="log-sign-btn" type="submit" onclick="collectdata()">LOGIN</button>
+    </form>
+    <div class="sign-btn-class">
+        <button class="sign-btn"><a href="signup" id="signup-btn">signup</a></button>
+    </div>
+</div>
+<%-include('../static/footer.ejs')%>
+</body>
+</html>

@@ -1,0 +1,64 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.login-div form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.login-inp {
+    margin: 20px;
+}
+
+.log-sign-btn{
+    color: black;
+    text-decoration: none;
+    background-color: cyan;
+    width: 200px;
+    height: 30px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+}
+
+.login-div {
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px black;
+    align-items: center;
+    width: 440px;
+    height: 50vh;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 30px;
+}
+.sign-btn
+{
+    color: black;
+    background-color: orange;
+    width: 200px;
+    height: 30px;
+    border-radius: 50px;
+    margin: auto;
+}
+#signup-btn{
+    color: black;
+    text-decoration: none;
+}
+.sign-btn-class{
+    padding-left: 118px;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+.login-inp::placeholder{
+    padding-left: 6px;
+}
+input {
+    width: 200px;
+    height: 30px;
+    border-radius: 50px;
+}

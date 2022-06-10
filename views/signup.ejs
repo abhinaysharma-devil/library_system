@@ -1,0 +1,18 @@
+
+<link rel="stylesheet" href="../assets/signup-style.css">
+<link rel="stylesheet" href="../assets/nav-footer-style.css">
+
+<%-include('../static/nav.ejs')%>
+
+<div class="signup-div">
+    <h1>Signup</h1>
+    <form action="/signup" method="POST">
+        <input type="text" name="f_name" id="f_name" placeholder="  first name" class="signup-inp">
+        <input type="text" name="l_name" id="l_name" placeholder="  last name" class="signup-inp">
+        <input type="email" name="email" id="email" placeholder="  email" class="signup-inp">
+        <input type="password" name="password" id="password" placeholder="  password" class="signup-inp">
+        <input type="submit" id="signup-btn" name="submit" value="Register">
+    </form>
+    <button id="login-btn"><a href="login" >LOG IN</a></button>
+</div>
+<%-include('../static/footer.ejs')%>

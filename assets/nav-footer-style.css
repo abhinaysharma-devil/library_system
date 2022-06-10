@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Neue', cursive;
+}
+nav{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 15vh;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 2px 2px 5px gray;
+}
+nav a{
+    -webkit-text-stroke: .1px cyan;
+    color: black;
+    padding-left: 50px;
+    line-height: 15vh;
+    text-decoration: none;
+}
+h1{
+    -webkit-text-stroke: .1px cyan;
+    margin-left: 15px;
+    font-size: 50px;
+    line-height: 15vh;
+}
+footer{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 5vh;
+    background-color: white;
+    color: black;
+    display: flexbox;
+    text-align: center;
+    justify-content: center;
+    line-height: 5vh;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 2px 2px 5px gray;
+
+}
+footer p{
+    margin: auto 0 auto 0;
+}

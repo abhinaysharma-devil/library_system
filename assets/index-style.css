@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Neue', cursive;
+}
+.img{
+    height: 500px;
+}
+#login-btn{
+    text-decoration:double;
+    color: black;
+    margin: 2px;
+    border: 0;
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    background-color: cyan;
+    font-size: large;
+}
+#signup-btn{
+    margin: 2px;
+    border: 0;
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    color: black;
+    background-color: cyan;
+    font-size: large;
+}
+.log-sign-class{
+    text-decoration: none;
+    color: black;
+
+}
+.log-sign-div{
+    margin: 4px;
+    display: flex;
+    justify-content: center;
+}
