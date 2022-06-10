@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#heading td{
+    font-weight: bold;
+}
+table tr td{
+ padding: 20px;
+ border: 1px solid black;
+}
+ table{
+    margin: auto;
+
+ }
+ .delete-btn{
+    height: 30px;
+    width: 60px;
+    border-radius: 10px;
+    background-color: orange;
+ }
+ .update-btn{
+    height: 30px;
+    width: 60px;
+    border-radius: 10px;
+    background-color: cyan;
+ }
+ #add-b-btn{
+   margin: auto;
+   height: 30px;
+   width: 80px;
+   border-radius: 10px;
+   background-color: orange;
+}
+#first-div{
+   display: flex;
+   flex-direction: row;
+}

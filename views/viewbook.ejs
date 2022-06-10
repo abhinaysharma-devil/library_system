@@ -1,0 +1,38 @@
+
+<link rel="stylesheet" href="../assets/nav-footer-style.css">
+<link rel="stylesheet" href="../assets/viewbook-style.css">
+
+<%-include('../static/nav.ejs')%>
+<div id="first-div"> 
+    <p id="vb-heading" style="font-size: 40px; margin: auto;">view books</p>
+    <button id="add-b-btn"> +add book</button>
+</div>
+
+<div class="fortable">
+<table>
+    <tr id="heading">
+        <td>Book name</td>
+        <td>Authors name</td>
+        <td>y/o issue</td>
+        <td>delete</td>
+        <td>update</td>
+    </tr>
+    <tr>
+        <td class="bookname" id="bookname-id"></td>
+        <td class="authname"></td>
+        <td class="year"></td>
+        <td><button class="delete-btn">delete</button></td>
+        <td><button class="update-btn">update</button></td>
+    </tr>
+</table>
+</div>
+
+<%-include('../static/footer.ejs')%>
+
+<Script>
+    // import booknamee from '../app.js'
+    // console.log(booknamee);
+
+    document.getElementById('bookname-id').innerHTML = 'booknamee';
+</Script>
+   

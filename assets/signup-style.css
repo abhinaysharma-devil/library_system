@@ -48,3 +48,8 @@ input {
         height: 30px;
         border-radius: 50px;
     }
+
+#vb-heading{
+    font-size: 80px;
+    margin: auto;
+}
