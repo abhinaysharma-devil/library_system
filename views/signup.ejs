@@ -11,9 +11,38 @@
         <input type="text" name="l_name" id="l_name" placeholder="  last name" class="signup-inp">
         <input type="email" name="email" id="email" placeholder="  email" class="signup-inp">
         <input type="password" name="password" id="password" placeholder="  password" class="signup-inp">
-        <input type="submit" id="signup-btn" name="submit" value="Register">
+        <input type="submit" id="signup-btn" name="submit" value="Register" onsubmit="savedata()">
     </form>
     <button id="login-btn"><a href="login" >LOG IN</a></button>
 </div>
 <%-include('../static/footer.ejs')%>
    
+<!-- <script src="../controllers/signupcontrol.js"></script> -->
+<script>
+    import db from '../config/connectdb.js'
+
+let btn = document.getElementById("signup-btn");
+btn.addEventListener("click", savedata())
+
+function savedata(){
+    //   let f_name = req.body.f_name
+    //   let l_name = req.body.l_name
+    //   let email = req.body.email
+    //   let pass = req.body.password
+
+    let f_name = document.getElementById("f_name").value;
+    let l_name = document.getElementById("l_name").value;
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
+      console.log(pass);
+      console.log("FSgsfgs");
+    
+      var qu = `insert into signup values("${f_name}", "${l_name}", "${email}", "${pass}", 10)`;
+      db.query(qu, function (err, result) {
+        if (err) throw err
+        else document.write("success......")
+      })
+    } 
+
+
+</script>

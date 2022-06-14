@@ -5,7 +5,7 @@
 <%-include('../static/nav.ejs')%>
 <div id="first-div"> 
     <p id="vb-heading" style="font-size: 40px; margin: auto;">view books</p>
-    <button id="add-b-btn"> +add book</button>
+    <button id="add-b-btn"><a href="http://localhost:9000/viewbooks/addbook">+add book </a></button>
 </div>
 
 <div class="fortable">
@@ -17,22 +17,25 @@
         <td>delete</td>
         <td>update</td>
     </tr>
-    <tr>
-        <td class="bookname" id="bookname-id"></td>
-        <td class="authname"></td>
-        <td class="year"></td>
-        <td><button class="delete-btn">delete</button></td>
-        <td><button class="update-btn">update</button></td>
-    </tr>
+
+    <% for(var i=0; i<len; i++) {%>
+        <tr>
+            <td class="bookname" id="bookname-id"> <%= res[i].book_name %></td>
+            <td class="authname"><%= res[i].author %></td>
+            <td class="year"><%= res[i].release_year %></td>
+            <td><a type="button" href="/viewbooks/delete/<%= res[i].book_id %>" class="delete-btn">delete</a></td>
+            <td><a type="button" href="/viewbooks/update/<%= res[i].book_id %>" class="update-btn">update</a></td>
+        </tr>
+     <% } %>
+   
 </table>
 </div>
 
 <%-include('../static/footer.ejs')%>
 
 <Script>
-    // import booknamee from '../app.js'
-    // console.log(booknamee);
-
-    document.getElementById('bookname-id').innerHTML = 'booknamee';
+    // console.log(JSON.stringify(res));
+    document.getElementById('bookname-id').innerHTML = result;
 </Script>
+
    

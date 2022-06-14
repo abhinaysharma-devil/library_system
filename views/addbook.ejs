@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="../assets/adduser-style.css">
+<link rel="stylesheet" href="../assets/nav-footer-style.css">
+
+<%-include('../static/nav.ejs')%>
+
+<div class="signup-div">
+    <h1>Add Book</h1>
+    <form method="POST">
+        <input type="text" name="book_name" id="book_name" placeholder="   book name" class="bookname">
+        <input type="text" name="author" id="author" placeholder="  author" class="author">
+        <input type="text" name="year" id="year" placeholder="  year" class="year">
+        <input type="submit" id="signup-btn" name="submit" value="Add Book" >
+    </form>
+</div>
+<%-include('../static/footer.ejs')%>
