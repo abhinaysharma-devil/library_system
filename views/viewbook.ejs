@@ -1,11 +1,11 @@
 
-<link rel="stylesheet" href="../assets/nav-footer-style.css">
 <link rel="stylesheet" href="../assets/viewbook-style.css">
+<link rel="stylesheet" href="../assets/nav-footer-style.css">
 
 <%-include('../static/nav.ejs')%>
 <div id="first-div"> 
     <p id="vb-heading" style="font-size: 40px; margin: auto;">view books</p>
-    <button id="add-b-btn"><a href="http://localhost:9000/viewbooks/addbook">+add book </a></button>
+    <button id="add-b-btn"><a href="http://localhost:9000/viewbooks/addbook" class="update-btn-class">+add book </a></button>
 </div>
 
 <div class="fortable">
@@ -19,12 +19,12 @@
     </tr>
 
     <% for(var i=0; i<len; i++) {%>
-        <tr>
+        <tr> 
             <td class="bookname" id="bookname-id"> <%= res[i].book_name %></td>
             <td class="authname"><%= res[i].author %></td>
             <td class="year"><%= res[i].release_year %></td>
-            <td><a type="button" href="/viewbooks/delete/<%= res[i].book_id %>" class="delete-btn">delete</a></td>
-            <td><a type="button" href="/viewbooks/update/<%= res[i].book_id %>" class="update-btn">update</a></td>
+            <td><button id="del-btn-id"><a type="button" href="/viewbooks/delete/<%= res[i].book_id %>" class="delete-btn" >delete</a></button></td>
+            <td><button id="update-btn-id"><a type="button" href="/viewbooks/update/<%= res[i].book_id %>" class="update-btn">update</a></button></td>
         </tr>
      <% } %>
    
@@ -32,10 +32,4 @@
 </div>
 
 <%-include('../static/footer.ejs')%>
-
-<Script>
-    // console.log(JSON.stringify(res));
-    document.getElementById('bookname-id').innerHTML = result;
-</Script>
-
    

@@ -12,10 +12,10 @@
     <%-include('../static/nav.ejs')%>
 <div class="login-div">
     <h1>Login</h1>
-    <form action="">
-        <input type="email" name="email" id="log-email" placeholder="email" class="login-inp">
-        <input type="password" name="pass" id="pass-id" placeholder="password" class="login-inp">
-        <button class="log-sign-btn" type="submit" onclick="collectdata()">LOGIN</button>
+    <form method="POST">
+        <input type="email" name="email" id="email" placeholder="email" class="login-inp">
+        <input type="password" name="password" id="password" placeholder="password" class="login-inp">
+        <input class="log-sign-btn" type="submit" value="login">
     </form>
     <div class="sign-btn-class">
         <button class="sign-btn"><a href="signup" id="signup-btn">signup</a></button>

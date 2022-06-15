@@ -1,38 +1,69 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+   margin: 0;
+   padding: 0;
 }
-#heading td{
-    font-weight: bold;
-}
-table tr td{
- padding: 20px;
- border: 1px solid black;
-}
- table{
-    margin: auto;
 
- }
- .delete-btn{
-    height: 30px;
-    width: 60px;
-    border-radius: 10px;
-    background-color: orange;
- }
- .update-btn{
-    height: 30px;
-    width: 60px;
-    border-radius: 10px;
-    background-color: cyan;
- }
- #add-b-btn{
+#heading td {
+   font-weight: bold;
+}
+
+table tr td {
+   padding: 20px;
+   border: 1px solid black;
+}
+
+table {
+   margin: auto;
+
+}
+
+.delete-btn {
+   text-decoration: none;
+   color: black;
+}
+
+#del-btn-id{
+   background-color: orange;
+   border: 2px solid black;
+   border-radius: 10px;
+   height: 30px;
+   width: 80px;
+}
+
+.update-btn {
+   text-decoration: none;
+   color: black;
+}
+
+#update-btn-id{
+   background-color: cyan;
+   border: 2px solid black;
+   border-radius: 10px;
+   height: 30px;
+   width: 80px;
+}
+.update-btn-class{
+   text-decoration: none;
+   color: black;
+}
+#add-b-btn {
+   
    margin: auto;
    height: 30px;
    width: 80px;
    border-radius: 10px;
    background-color: orange;
 }
-#first-div{
+
+#first-div {
    display: flex;
    flex-direction: row;
+}
+#first-div p{
+   padding: 20px 0 20px 0;
+   /* padding-left: 140px; */
+}
+#first-div button{
+   margin: 30px 420px 20px 0;
+   /* padding-left: 140px; */
 }

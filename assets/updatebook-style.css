@@ -1,0 +1,35 @@
+#updatebook-heading{
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+}
+.updatebook-div form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.updatebook-div {
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px black;
+    align-items: center;
+    margin: auto;
+    margin-top: 30px;
+    width: 440px;
+    border-radius: 10px;
+} 
+.inp-elem{
+    margin: 10px 0 10px 0;
+}
+#updatebook-btn{
+    background-color: cyan;
+    width: 200px;
+    height: 30px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+}
+input {
+    width: 200px;
+        height: 30px;
+        border-radius: 50px;
+    }

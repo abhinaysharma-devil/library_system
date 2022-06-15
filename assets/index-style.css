@@ -4,7 +4,14 @@
     font-family: 'Comic Neue', cursive;
 }
 .img{
-    height: 500px;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+}
+#bookpng{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 40vh;
 }
 #login-btn{
     text-decoration:double;
