@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import {index, loginget, signupget, updatebookget, addbookget} from '../controllers/controller.js'
 import {viewbooks, bookdel, putbook,addbook} from '../controllers/booklist.js';
 import signup from '../controllers/signupcontrol.js'
-import loginuser from '../controllers/logincontrol.js'
+import {loginuser,authtoken} from '../controllers/logincontrol.js'
 
 const router = express.Router()
 
@@ -29,7 +29,7 @@ router.get("/signup", signupget)
 router.post("/signup", x , signup)
 
 
-router.get("/viewbooks", viewbooks)
+router.get("/viewbooks", authtoken , viewbooks)
 
 
 router.get("/viewbooks/addbook", addbookget)

@@ -2,7 +2,9 @@ import express from 'express'
 import db from '../config/connectdb.js'
 import authschema from '../validation/valid_schema.js'
 
-let signup = async(req,res,next) => {
+
+
+let signup = async(req,res) => {
 
   let f_name = req.body.f_name
   let l_name = req.body.l_name
