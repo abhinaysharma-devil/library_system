@@ -1,5 +1,92 @@
-<link rel="stylesheet" href="../assets/udatebook-style.css">
+<link rel="stylesheet" href="../assets/updatebook-style.css">
 <link rel="stylesheet" href="../assets/nav-footer-style.css">
+
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Neue', cursive;
+}
+nav{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 15vh;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 2px 2px 5px gray;
+}
+nav a{
+    -webkit-text-stroke: .1px cyan;
+    color: black;
+    padding-left: 50px;
+    line-height: 15vh;
+    text-decoration: none;
+}
+h1{
+    -webkit-text-stroke: .1px cyan;
+    margin-left: 15px;
+    font-size: 50px;
+    line-height: 15vh;
+}
+footer{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 5vh;
+    background-color: white;
+    color: black;
+    display: flexbox;
+    text-align: center;
+    justify-content: center;
+    line-height: 5vh;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 2px 2px 5px gray;
+
+}
+footer p{
+    margin: auto 0 auto 0;
+}
+    /* ----------------------- */
+    #updatebook-heading{
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+}
+.updatebook-div form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.updatebook-div {
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px black;
+    align-items: center;
+    margin: auto;
+    margin-top: 30px;
+    width: 440px;
+    border-radius: 10px;
+} 
+.inp-elem{
+    margin: 10px 0 10px 0;
+}
+#updatebook-btn{
+    background-color: cyan;
+    width: 200px;
+    height: 30px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+}
+input {
+    width: 200px;
+        height: 30px;
+        border-radius: 50px;
+    }
+
+    
+</style>
 
 <%-include('../static/nav.ejs')%>
 
@@ -9,7 +96,7 @@
         <input type="text" name="book_name" id="book_name" placeholder="   book name" class="bookname inp-elem" value="<%= res[0].book_name %>">
         <input type="text" name="author" id="author" placeholder="  author" class="author inp-elem" value="<%= res[0].author %>">
         <input type="text" name="year" id="year" placeholder="  year" class="year inp-elem" value="<%= res[0].release_year %>">
-        <input type="submit" id="signup-btn" name="submit" value="update details" class="inp-elem" >
+        <input type="submit" id="updatebook-btn" name="submit" value="update details" class="inp-elem" >
     </form>
 </div>
 <%-include('../static/footer.ejs')%>

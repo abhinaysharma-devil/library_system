@@ -22,10 +22,7 @@ let updatebookget = (req,res) =>{
         db.query(query, function(err, result){
           if (err) throw err
           else {
-              // console.log(result);
-              res.render('update.ejs',{
-              res: (result)
-            })
+            res.render('update.ejs',{res: result })
           }
         })
     }
@@ -34,4 +31,4 @@ let updatebookget = (req,res) =>{
     }
 }
 
-export { index, signupget, loginget, addbookget, updatebookget }
+export {index, loginget, signupget, updatebookget, addbookget}
