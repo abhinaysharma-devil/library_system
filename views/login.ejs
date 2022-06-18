@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="../assets/nav-footer-style.css">
 </head>
 <body>
-    <%-include('../static/nav.ejs')%>
+    <% if(message){%>
+        <%- include('../static/flash_box.ejs')%>
+        <%}%>
+        <%-include('../static/nav.ejs')%>
 <div class="login-div">
     <h1>Login</h1>
     <form method="POST">
@@ -24,3 +27,4 @@
 <%-include('../static/footer.ejs')%>
 </body>
 </html>
+ 

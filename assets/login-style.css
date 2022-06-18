@@ -13,8 +13,14 @@ h1 {
 
 .login-inp {
     margin: 20px;
+    padding-left: 10px;
 }
 
+.login-inp[type= text] {
+    padding: 20px;
+    margin: 20px;
+
+}
 .log-sign-btn{
     color: black;
     text-decoration: none;
@@ -55,10 +61,11 @@ h1 {
     /* border: 1px solid black; */
 }
 .login-inp::placeholder{
-    padding-left: 6px;
+    padding-left: 16px;
 }
+
 input {
-    width: 200px;
+    width: 190px;
     height: 30px;
     border-radius: 50px;
 }

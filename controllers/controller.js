@@ -5,11 +5,11 @@ let index = (req, res) => {
 }
 
 let loginget= (req,res) =>{
-  res.render('login.ejs');
+  res.render('login.ejs',{message: 'message',flag: 1});
 }
 
 let signupget = (req, res) => {
-  res.render('signup.ejs');
+  res.render('signup.ejs',{message: 'message',flag: 1});
 }
 
 let addbookget= (req,res) =>{    
