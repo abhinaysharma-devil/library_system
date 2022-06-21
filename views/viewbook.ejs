@@ -1,7 +1,9 @@
 
 <link rel="stylesheet" href="../assets/viewbook-style.css">
 <link rel="stylesheet" href="../assets/nav-footer-style.css">
-
+<% if(message){%>
+    <%- include('../static/flash_box.ejs')%> 
+    <%}%>
 <%-include('../static/nav.ejs')%>
 <div id="first-div"> 
     <p id="vb-heading" style="font-size: 40px; margin: auto;">view books</p>

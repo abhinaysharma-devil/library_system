@@ -29,7 +29,8 @@ let viewbooks = (req, res) => {
       else {
         res.render('viewbook.ejs', {
           res: (result),
-          len: (result.length)
+          len: (result.length),
+          message: ""
         })
       }
     })

@@ -25,4 +25,5 @@ application.use(express.json());
 
 application.listen(port,'localhost',()=>{
     console.log(`running... at port http://localhost:${port}`);
+    
 })
