@@ -1,11 +1,14 @@
 import {google} from 'googleapis'
 import nodemailer from 'nodemailer'
 import otp from '../controllers/test.js'
+import dotenv from 'dotenv'
+dotenv.config()
 
-const CLIENT_ID = '592438844344-0qi01holq1gt9q31r8dcbehemmfm0c1d.apps.googleusercontent.com'
-const CLIENT_SECRET = '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'
+
+const CLIENT_ID = process.env.clientId
+const CLIENT_SECRET = process.env.clientSecret
 const REDIRECT_URI = 'https://developers.google.com/oauthplayground'
-const REFRESH_TOKEN = '1//04Mw7evwVf20rCgYIARAAGAQSNwF-L9Irqb8ZTCYficS-iMZaLyscy3grMnU5r95rfvVK2LOmPwpeE9VlMJCBohb4ANX8Q4JLB30'
+const REFRESH_TOKEN = process.env.refreshToken
 
 const oauthclient = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
 oauthclient.setCredentials({ 
@@ -24,8 +27,8 @@ const transport = nodemailer.createTransport({
         clientSecret: CLIENT_SECRET,
         refreshToken: REFRESH_TOKEN,
         accessToken: accesstoken,
-        user: 'panchalabhinay@gmail.com',
-        pass: 'xirnjilatpiadost'
+        user: process.env.userEmail,
+        pass: process.env.userPass
      }
 })
 const mailoption = {
@@ -47,3 +50,4 @@ return result
 sendMail().then(result=> console.log ('email sent...', result))
 .catch(error => console.log(error.message))
 
+ 
