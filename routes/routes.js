@@ -5,6 +5,7 @@ import {index, loginget, signupget, updatebookget, addbookget} from '../controll
 import {viewbooks, bookdel, putbook,addbook} from '../controllers/booklist.js';
 import signup from '../controllers/signupcontrol.js'
 import {loginuser,authtoken} from '../controllers/logincontrol.js'
+// import requestPermission from '../controllers/fcm.js'
 
 const router = express.Router()
 
@@ -44,6 +45,13 @@ router.post("/viewbooks/update/:id", putbook)
 
 router.get("/viewbooks/delete/:id",bookdel)
 
+router.get("/noti", (req,res)=>{
+    res.render('test_noti.ejs')
+})
+
+router.get("/store", (req,res)=>{
+    res.render('storage.ejs')
+})
 
 router.all('*', (req, res)=>{
     res.status(404).send('<h1>404 page not found!</h1>')

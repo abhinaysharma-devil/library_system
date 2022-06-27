@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <input type="file" id="file">
+  <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+import { getStorage , ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-storage.js";
+
+
+const firebaseConfig = {
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOM,
+  projectId: "dooms-library",
+  storageBucket: "dooms-library.appspot.com",
+  messagingSenderId: process.env.M_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.M_ID
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const storage = getStorage(app);
+
+
+document.getElementById('file').addEventListener('change',(e)=>{
+  // console.log(imageref)
+  const f= e.target.files[0]
+  const storageref= ref(storage, f.name)
+    // const storageref= app.storage.ref(storage, f.name);
+
+  uploadBytes(storageref, file).then((snapshot) => {
+  console.log('Uploaded a blob or file!');
+});
+    // storageref.put(f)
+})
+
+  </script>
+<!-- <form method="post">
+    <input type="submit" value="" id="file">
+</form> -->
+
+    
+    
+</body>
+</html>

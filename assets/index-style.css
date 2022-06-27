@@ -24,6 +24,17 @@
     background-color: cyan;
     font-size: large;
 }
+.s-class{
+    text-decoration:double;
+    color: black;
+    margin: 2px;
+    border: 0;
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    background-color: cyan;
+    font-size: large;
+}
 #signup-btn{
     margin: 2px;
     border: 0;

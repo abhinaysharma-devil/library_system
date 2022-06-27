@@ -32,13 +32,13 @@ import dotenv from '../package.json/dotenv'
 dotenv.config()
 
 const firebaseConfig = {
-  apiKey: process.evn.API_KEY,
-  authDomain: "dooms-library.firebaseapp.com",
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOM,
   projectId: "dooms-library",
   storageBucket: "dooms-library.appspot.com",
-  messagingSenderId: "592438844344",
-  appId: "1:592438844344:web:df3afd0b414f27847b0d4d",
-  measurementId: "G-89RQHPQ7ZR"
+  messagingSenderId: process.env.M_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.M_ID
 };
 
 
