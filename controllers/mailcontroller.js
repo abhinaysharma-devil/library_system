@@ -14,7 +14,7 @@ const oauthclient = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_UR
 oauthclient.setCredentials({ 
     refresh_token: REFRESH_TOKEN
 })
-
+// const sendmailfrom =
 async function sendMail(){
     try {
 const accesstoken = await oauthclient.getAccessToken()
@@ -50,4 +50,6 @@ return result
 sendMail().then(result=> console.log ('email sent...', result))
 .catch(error => console.log(error.message))
 
- 
+// export default sendmailfrom
+
+  

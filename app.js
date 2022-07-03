@@ -1,29 +1,32 @@
-import express from 'express'
-import route from './routes/routes.js';
-import dotenv from 'dotenv'
-import bodyparser from 'body-parser'
-import cookieparser from 'cookie-parser'
+    import express from 'express'
+    import route from './routes/routes.js';
+    import dotenv from 'dotenv'
+    import bodyparser from 'body-parser'
+    import cookieparser from 'cookie-parser'
 
-dotenv.config()
 
-const application = express()
-const port = process.env.PORT;
+    dotenv.config()
 
-// application.use( express.static( "public" ) );
+    const application = express()
+    const port = process.env.PORT;
 
-application.use(bodyparser.urlencoded({ extended: false }))
+    // application.use( express.static( "public" ) );
 
-// parse application/json
-application.use(bodyparser.json())
-application.use(cookieparser())
+    application.use(bodyparser.urlencoded({ extended: false }))
 
-application.set('view-engine', 'ejs')
-application.use("/assets",express.static("assets"))
+    // parse application/json
+    application.use(bodyparser.json())
+    application.use(cookieparser())
 
-application.use('/',route);
-application.use(express.json());
+    application.set('view-engine', 'ejs')
+    application.use("/assets",express.static("assets"))
 
-application.listen(port,'localhost',()=>{
-    console.log(`running... at port http://localhost:${port}`);
-    
-})
+    application.use('/',route);
+    application.use(express.json());
+
+
+
+    application.listen(port,'localhost',()=>{
+        console.log(`running... at port http://localhost:${port}`);
+        
+    })

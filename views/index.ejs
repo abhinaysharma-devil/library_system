@@ -22,23 +22,18 @@
       </div>
       <div class="log-sign-div">
         <button id="login-btn"><a class="log-sign-class" href="login">login</a></button>
+        <button class="s-class" id="swithgoogle">google</button>
         <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-analytics.js";
-import dotenv from '../package.json/dotenv'
+// import dotenv from '../package.json/dotenv'
 
-dotenv.config()
+// dotenv.config()
 
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
-  authDomain: process.env.AUTH_DOM,
-  projectId: "dooms-library",
-  storageBucket: "dooms-library.appspot.com",
-  messagingSenderId: process.env.M_ID,
-  appId: process.env.APP_ID,
-  measurementId: process.env.M_ID
+
 };
 
 
@@ -46,68 +41,32 @@ const app = initializeApp(firebaseConfig);
 // const auth = app.getAuth(app)
 const auth = getAuth();
 
-const p = new GoogleAuthProvider(app);
-const provider = new FacebookAuthProvider();
+const provider = new GoogleAuthProvider(app);
 provider.setCustomParameters({
        'display': 'popup'
     });
-
-
-    
-    document.getElementById("swithgoogle").addEventListener('click', function signupwithgoogle() {
-      // var gap = new app.auth.GoogleAuthProvider()
-      signInWithPopup(auth, p)
+document.getElementById("swithgoogle").addEventListener('click', function signupwithgoogle() {
+signInWithPopup(auth, provider)
 .then((result) => {
 // This gives you a Google Access Token. You can use it to access the Google API.
 const credential = GoogleAuthProvider.credentialFromResult(result);
 const token = credential.accessToken;
-// The signed-in user info.
 const user = result.user;
-// ...
+
 }).catch((error) => {
-// Handle Errors here.
+
 const errorCode = error.code;
 const errorMessage = error.message;
-// The email of the user's account used.
+
 const email = error.customData.email;
-// The AuthCredential type that was used.
+
 const credential = GoogleAuthProvider.credentialFromError(error);
 // ...
-});
-
-
-document.getElementById("swithfb").addEventListener('click', function signupwithfb() {
-      // var gap = new app.auth.GoogleAuthProvider()
-      signInWithPopup(auth, provider)
-.then((result) => {
-// The signed-in user info.
-const user = result.user;
-
-// This gives you a Facebook Access Token. You can use it to access the Facebook API.
-const credential = FacebookAuthProvider.credentialFromResult(result);
-const accessToken = credential.accessToken;
-
-// ...
-})
-.catch((error) => {
-// Handle Errors here.
-const errorCode = error.code;
-const errorMessage = error.message;
-// The email of the user's account used.
-const email = error.customData.email;
-// The AuthCredential type that was used.
-const credential = FacebookAuthProvider.credentialFromError(error);
-
-console.log(errorMessage)
-});
-      
 });
 
 })
 
         </script>
-        <button class="s-class" id="swithgoogle">google</button>
-        <button class="s-class" id="swithfb">facebook</button>
         <button id="signup-btn"><a class="log-sign-class" href="signup">signup</a></button>
       </div>
     </main>
