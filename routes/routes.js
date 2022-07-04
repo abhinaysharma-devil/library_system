@@ -2,9 +2,9 @@ import express from 'express'
 import {resolve} from 'path'
 import bodyParser from 'body-parser';
 import {index, loginget, signupget, updatebookget, addbookget} from '../controllers/controller.js'
-import {viewbooks, bookdel, putbook,addbook} from '../controllers/booklist.js';
-import signup from '../controllers/signupcontrol.js'
-import {loginuser,authtoken} from '../controllers/logincontrol.js'
+import {viewbooks, bookdel, putbook,addbook, viewbooksApi, addbookApi, putbookApi, bookdelApi} from '../controllers/booklist.js';
+import {signup, signupApi} from '../controllers/signupcontrol.js'
+import {loginuser,authtoken, loginuserApi} from '../controllers/logincontrol.js'
 import options from '../src/swagger.js'
 import swaggerui from 'swagger-ui-express'
 import swaggerjsDocs from 'swagger-jsdoc'
@@ -43,13 +43,13 @@ var x= bodyParser.urlencoded({ extended: true});
  *          -email id
  *          -password
  *       properties:
- *         first name:
+ *         f_name:
  *           type : string
  *           description: first name string value
- *         last name:
+ *         l_name:
  *           type : string
  *           description: last name string value
- *         email-id:
+ *         email:
  *           type: string
  *           description: Here is your email-id ex- abc@gmail.com
  *         password:
@@ -58,21 +58,6 @@ var x= bodyParser.urlencoded({ extended: true});
  * 
  *      viewbooks:
  *       type: object 
- *       require:
- *     
- *       properties:
- *         book_name:
- *           type: string
- *           description: book name
- *         author:
- *           type: string
- *           description: author of the book
- *         update_book:
- *           type: button
- *           description: 
- *         delete_book:
- *           type: button
- *           description: 
  * 
  *      viewbooks_addbook:
  *       type: object 
@@ -127,8 +112,8 @@ var x= bodyParser.urlencoded({ extended: true});
 
 /** 
  * @swagger 
- * /login: 
- *   get: 
+ * /api/login: 
+ *   post: 
  *     description: Login into the web 
  *     requestBody:
  *        required: true
@@ -144,7 +129,7 @@ var x= bodyParser.urlencoded({ extended: true});
 
 /** 
  * @swagger 
- * /signup: 
+ * /api/signup: 
  *   post: 
  *     description: Signup into the web 
  *     requestBody:
@@ -161,7 +146,7 @@ var x= bodyParser.urlencoded({ extended: true});
 
 /** 
  * @swagger 
- * /viewbooks: 
+ * /api/viewbooks: 
  *   get: 
  *     description: here you can see the books
  *     requestBody:
@@ -178,7 +163,7 @@ var x= bodyParser.urlencoded({ extended: true});
 
 /** 
  * @swagger 
- * /viewbooks/addbook: 
+ * /api/viewbooks/addbook: 
  *   post: 
  *     description: here you can addbook the books
  *     requestBody:
@@ -195,7 +180,7 @@ var x= bodyParser.urlencoded({ extended: true});
 
 /** 
  * @swagger 
- * /viewbooks/update/:id: 
+ * /api/viewbooks/update/:id: 
  *   post: 
  *     description: here you can update the books
  *     requestBody:
@@ -212,8 +197,8 @@ var x= bodyParser.urlencoded({ extended: true});
 
 /** 
  * @swagger 
- * /viewbooks/delete/:id: 
- *   get: 
+ * /api/viewbooks/delete/:id: 
+ *   post: 
  *     description: here you can delete the books
  *     requestBody:
  *        required: true
@@ -233,27 +218,39 @@ router.get("/", index)
 router.get("/login", loginget)
 
 router.post("/login", loginuser)
+router.post("/api/login", loginuserApi)
+
 
 
 router.get("/signup", signupget)
 
 router.post("/signup", x , signup)
+router.post("/api/signup", x , signupApi)
+
 
 
 router.get("/viewbooks", authtoken , viewbooks)
+router.get("/api/viewbooks" , authtoken , viewbooksApi)
+
 
 
 router.get("/viewbooks/addbook", addbookget)
 
 router.post("/viewbooks/addbook", addbook)
+router.post("/api/viewbooks/addbook", addbookApi)
+
 
 
 router.get("/viewbooks/update/:id", updatebookget)
 
 router.post("/viewbooks/update/:id", putbook)
+router.post("/api/viewbooks/update/:id", putbookApi)
+
 
 
 router.get("/viewbooks/delete/:id",bookdel)
+router.post("/api/viewbooks/delete/:id",bookdelApi)
+
 
 const swaggerDoc = swaggerjsDocs(options);
 router.use("/api-docs", swaggerui.serve, swaggerui.setup(swaggerDoc))
