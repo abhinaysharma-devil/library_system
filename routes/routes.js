@@ -11,7 +11,7 @@ import swaggerjsDocs from 'swagger-jsdoc'
 
 const router = express.Router()
 
-const __dirname=resolve();
+const __dirname=resolve();   
 router.use(express.json())
 
 router.use(bodyParser.json());
